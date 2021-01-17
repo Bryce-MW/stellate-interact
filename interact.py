@@ -13,11 +13,11 @@ cur = con.cursor()
 
 # SSH_ORIGINAL_COMMAND
 
-SSH_CMD = os.getenv("SSH_ORIGINAL_COMMAND")
+# SSH_CMD = os.getenv("SSH_ORIGINAL_COMMAND")
 
-if SSH_CMD:
-  print("Automated connections are not implemented quite yet")
-  exit(0)
+# if SSH_CMD:
+#   print("Automated connections are not implemented quite yet")
+#   exit(0)
 
 print("\n Here are the hosts that you already have set up:")
 
