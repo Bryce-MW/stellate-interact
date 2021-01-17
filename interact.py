@@ -23,7 +23,7 @@ cur = con.cursor()
 print("\n Here are the hosts that you already have set up:")
 
 cur.execute("""
-SELECT type, username, hostname, port FROM hosts INNER JOIN passwd_table ON "user"=uid WHERE username=%s
+SELECT type, username, hostname, port FROM hosts INNER JOIN passwd_table ON "user"=uid WHERE username=%s;
 """, (getpass.getuser(),))
 
 for i,line in enumerate(cur):
