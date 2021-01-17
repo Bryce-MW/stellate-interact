@@ -8,7 +8,8 @@ import getpass
 print("Hello!")
 print("Welcome to Stellate!")
 
-con = psycopg2.connect(database="stellate", user="bryce", host="10.29.33.3", password=password, autocommit=True)
+con = psycopg2.connect(database="stellate", user="bryce", host="10.29.33.3", password=password)
+con.set_session(autocommit=True)
 cur = con.cursor()
 
 # SSH_ORIGINAL_COMMAND
