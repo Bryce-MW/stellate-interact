@@ -8,7 +8,7 @@ import getpass
 print("Hello!")
 print("Welcome to Stellate!")
 
-con = psycopg2.connect(database="stellate", user="bryce", host="10.29.33.3", password=password)
+con = psycopg2.connect(database="stellate", user="bryce", host="10.29.33.3", password=password, autocommit=True)
 cur = con.cursor()
 
 # SSH_ORIGINAL_COMMAND
@@ -27,3 +27,6 @@ SELECT type, username, hostname, port FROM hosts INNER JOIN passwd_table ON "use
 
 for i,line in enumerate(cur):
   print(f" {i}. {line[0]} {line[1]}@{line[2]}:{line[3]}`")
+
+
+con.close()
