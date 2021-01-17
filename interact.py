@@ -1,9 +1,8 @@
 #! /usr/bin/env python3
 
 from stellate_auth import password
-import os
+import psutil
 import psycopg2
-import getpass
 
 print("Hello!")
 print("Welcome to Stellate!")
@@ -24,7 +23,7 @@ print("\n Here are the hosts that you already have set up:")
 
 cur.execute("""
 SELECT type, username, hostname, port FROM hosts INNER JOIN passwd_table ON "user"=uid WHERE username=%s;
-""", (getpass.getuser(),))
+""", (psutil.Process().username(),))
 
 for i,line in enumerate(cur):
   print(f" {i}. {line[0]} {line[1]}@{line[2]}:{line[3]}`")
