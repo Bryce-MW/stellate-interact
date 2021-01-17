@@ -28,5 +28,14 @@ SELECT type, username, hostname, port FROM hosts INNER JOIN passwd_table ON "use
 for i,line in enumerate(cur):
   print(f" {i}. {line[0]} {line[1]}@{line[2]}:{line[3]}`")
 
+print("\nEnter the connection that you would like to use or \"configure\" to create a new one")
+query = input("-> ")
+
+if query.lower() == "configure":
+  print("Configuring has not been added yet")
+  exit(0)
+
+print("Using a connection has not been added yet")
 
 con.close()
+exit(0)
